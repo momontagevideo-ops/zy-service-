@@ -1,337 +1,131 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دورة إحتراف المونتاج وصناعة المحتوى | ZY SERVICE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-deep: #F8F9FA;
-            --bg-card: #FFFFFF;
-            --accent-yellow: #FFD600;
-            --accent-yellow-dark: #C9A227;
-            --text-main: #1A1A1A;
-            --text-muted: #666666;
-            --border-glass: rgba(201, 162, 39, 0.25);
-            --shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            min-height: 100vh;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 10%, rgba(255, 214, 0, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 90% 90%, rgba(255, 214, 0, 0.08) 0%, transparent 50%);
-        }
-
-        .wrapper {
-            width: 100%;
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 20px 15px 60px 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .brand-header {
-            text-align: center;
-            padding: 25px 0 10px 0;
-        }
-
-        .brand-logo {
-            font-size: 34px;
-            font-weight: 900;
-            color: #1A1A1A;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        .brand-logo span {
-            color: var(--accent-yellow-dark);
-            background: #1A1A1A;
-            padding: 2px 10px;
-            border-radius: 8px;
-            margin-right: 5px;
-        }
-
-        .brand-subtitle {
-            font-size: 14px;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        .glass-card {
-            background: var(--bg-card);
-            border: 2px solid var(--border-glass);
-            border-radius: 28px;
-            padding: 35px 25px;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #1A1A1A, var(--accent-yellow), var(--accent-yellow-dark));
-        }
-
-        .alert-banner {
-            background: rgba(255, 75, 75, 0.08);
-            border: 1px solid rgba(255, 75, 75, 0.25);
-            color: #d93838;
-            padding: 14px 18px;
-            border-radius: 16px;
-            font-size: 15px;
-            font-weight: 800;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(255, 75, 75, 0.05);
-        }
-
-        .main-title {
-            font-size: 26px;
-            font-weight: 900;
-            color: #1A1A1A;
-            text-align: center;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .main-title span {
-            background: var(--accent-yellow);
-            color: #1A1A1A;
-            padding: 2px 8px;
-            border-radius: 6px;
-        }
-
-        .price-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin: 20px 0 30px 0;
-        }
-
-        .price-tag {
-            background: #1A1A1A;
-            color: var(--accent-yellow);
-            font-size: 26px;
-            font-weight: 900;
-            padding: 12px 35px;
-            border-radius: 50px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            border: 2px solid var(--accent-yellow);
-        }
-
-        .sessions-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .session-box {
-            background: #F8F9FA;
-            border: 1px solid #E5E7EB;
-            padding: 18px;
-            border-radius: 18px;
-            text-align: center;
-            transition: transform 0.2s;
-        }
-
-        .session-box i {
-            color: #1A1A1A;
-            font-size: 24px;
-            margin-bottom: 8px;
-            display: inline-block;
-        }
-
-        .session-box h3 {
-            font-size: 14px;
-            color: #1A1A1A;
-            font-weight: 800;
-            line-height: 1.7;
-        }
-
-        .feature-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-top: 10px;
-        }
-
-        .feature-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 15px;
-            color: var(--text-main);
-            font-weight: 700;
-            line-height: 1.8;
-        }
-
-        .feature-list li i {
-            color: var(--accent-yellow-dark);
-            margin-top: 4px;
-        }
-
-        .section-title {
-            font-size: 22px;
-            font-weight: 900;
-            margin-bottom: 18px;
-            text-align: center;
-            color: #1A1A1A;
-        }
-
-        .learn-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-
-        .learn-item {
-            background: #F8F9FA;
-            border: 1px solid #E5E7EB;
-            border-radius: 16px;
-            padding: 16px;
-            font-weight: 700;
-            color: var(--text-main);
-            text-align: center;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, #1A1A1A 0%, #292929 100%);
-            border-radius: 24px;
-            padding: 24px 20px;
-            text-align: center;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .cta-box p {
-            color: #fff;
-            font-size: 18px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--accent-yellow);
-            color: #1A1A1A;
-            font-weight: 900;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-        }
-
-        @media (max-width: 560px) {
-            .sessions-grid,
-            .learn-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .brand-logo {
-                font-size: 28px;
-            }
-
-            .main-title {
-                font-size: 22px;
-            }
-
-            .price-tag {
-                padding: 12px 22px;
-                font-size: 22px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="ابدأ رحلتك في المونتاج وصناعة المحتوى مع دورة عملية من ZY SERVICE. 8 جلسات تعليمية، دعم مباشر، وشهادة إتمام مقابل 249 ر.س.">
+  <title>دورة احتراف المونتاج وصناعة المحتوى | ZY SERVICE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root{--ink:#101114;--ink-soft:#191a1f;--yellow:#ffd600;--yellow-dark:#d5ae00;--paper:#f7f7f5;--white:#fff;--muted:#a9abb3;--line:rgba(255,255,255,.12);--shadow:0 24px 70px rgba(0,0,0,.22);--radius:24px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{font-family:'Cairo',sans-serif;background:var(--ink);color:var(--white);line-height:1.8;overflow-x:hidden}
+    a{color:inherit}
+    .container{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(16,17,20,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:21px;font-weight:900;letter-spacing:.5px}
+    .brand-mark{background:var(--yellow);color:var(--ink);padding:1px 9px;border-radius:8px}
+    .nav-links{display:flex;align-items:center;gap:25px;list-style:none}
+    .nav-links a{text-decoration:none;color:#d4d4d8;font-size:14px;font-weight:700;transition:color .2s}
+    .nav-links a:hover{color:var(--yellow)}
+    .button{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;background:var(--yellow);color:var(--ink);text-decoration:none;font-weight:900;border:1px solid var(--yellow);transition:transform .2s,box-shadow .2s;cursor:pointer;font-family:inherit}
+    .button:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,214,0,.2)}
+    .button-outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.28)}
+    .button-outline:hover{border-color:var(--yellow);color:var(--yellow);box-shadow:none}
+    .hero{position:relative;padding:94px 0 84px;overflow:hidden;background:radial-gradient(ellipse at 14% 20%,rgba(255,214,0,.13),transparent 36%),radial-gradient(ellipse at 88% 82%,rgba(255,214,0,.08),transparent 33%)}
+    .hero:after{content:'';position:absolute;inset:auto -12% -260px 45%;height:420px;border:1px solid rgba(255,214,0,.12);border-radius:50%;transform:rotate(-18deg);pointer-events:none}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--yellow);font-weight:800;font-size:14px;margin-bottom:18px}
+    .eyebrow i{font-size:13px}
+    h1{font-size:clamp(36px,5.5vw,62px);line-height:1.35;font-weight:900;letter-spacing:-1.6px;max-width:720px}
+    h1 span{color:var(--yellow)}
+    .hero-copy{color:#c3c4ca;font-size:17px;max-width:640px;margin:18px 0 27px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .hero-note{color:var(--muted);font-size:13px;margin-top:18px}
+    .course-card{position:relative;background:linear-gradient(145deg,#24252b,#17181c);border:1px solid rgba(255,255,255,.13);border-radius:30px;padding:27px;box-shadow:var(--shadow);overflow:hidden}
+    .course-card:before{content:'';position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,var(--yellow),#fff1a6)}
+    .preview{height:190px;border-radius:20px;background:radial-gradient(circle at 50% 45%,rgba(255,214,0,.22),transparent 34%),linear-gradient(135deg,#32333a,#15161a);display:grid;place-items:center;margin-bottom:22px;position:relative;overflow:hidden}
+    .preview:before,.preview:after{content:'';position:absolute;width:180px;height:180px;border:1px solid rgba(255,214,0,.22);border-radius:50%}
+    .preview:after{width:240px;height:240px}
+    .play{z-index:1;width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);color:var(--ink);font-size:20px;box-shadow:0 0 0 12px rgba(255,214,0,.12)}
+    .card-label{color:var(--muted);font-size:13px;font-weight:700}
+    .price-line{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:3px 0 14px}
+    .price{font-size:32px;font-weight:900;color:var(--yellow);line-height:1.3}
+    .price small{font-size:15px;color:#dedfe2}
+    .card-divider{border:0;border-top:1px solid var(--line);margin:18px 0}
+    .card-facts{display:grid;grid-template-columns:1fr 1fr;gap:13px;color:#e5e5e7;font-size:13px;font-weight:700}
+    .card-facts span{display:flex;align-items:center;gap:8px}.card-facts i{color:var(--yellow)}
+    .section{padding:82px 0}
+    .section-light{background:var(--paper);color:var(--ink)}
+    .section-head{text-align:center;max-width:710px;margin:0 auto 42px}
+    .kicker{color:#9a7c00;font-weight:900;font-size:13px;letter-spacing:.4px}
+    .section-head h2{font-size:clamp(28px,4vw,42px);line-height:1.4;margin:8px 0 10px;font-weight:900}
+    .section-head p{color:#777982;font-size:15px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+    .stat{padding:18px 14px;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:17px;text-align:center}
+    .stat strong{display:block;color:var(--yellow);font-size:20px;font-weight:900}.stat span{font-size:12px;color:#b9bac0;font-weight:700}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .feature,.module,.step,.faq details{border-radius:20px;padding:23px;background:#fff;border:1px solid #e8e8e5;box-shadow:0 8px 26px rgba(19,20,23,.045)}
+    .feature-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#fff6c2;color:#8a7000;font-size:19px;margin-bottom:15px}
+    .feature h3,.module h3{font-size:17px;margin-bottom:6px;font-weight:900}.feature p,.module p{font-size:13px;color:#747680;line-height:1.9}
+    .dark-section{background:#15161a}
+    .modules{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .module{background:#1d1e23;border-color:var(--line);box-shadow:none;display:flex;gap:15px;align-items:flex-start}
+    .module-number{flex:0 0 42px;height:42px;border-radius:13px;background:rgba(255,214,0,.12);color:var(--yellow);display:grid;place-items:center;font-weight:900}
+    .module h3{color:#fff}.module p{color:#b4b5bc}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .step{position:relative;padding-top:28px}.step-num{font-size:13px;font-weight:900;color:#8a7000;background:#fff6c2;border-radius:50px;padding:4px 12px;display:inline-block;margin-bottom:13px}.step h3{font-size:17px;margin-bottom:5px}.step p{font-size:13px;color:#747680}
+    .faq{max-width:800px;margin-inline:auto;display:grid;gap:12px}.faq details{padding:0 20px;box-shadow:none}.faq summary{cursor:pointer;list-style:none;padding:17px 0;font-weight:800;display:flex;justify-content:space-between;gap:15px}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:'+';color:#8a7000;font-size:22px;line-height:1}.faq details[open] summary:after{content:'−'}.faq details p{color:#747680;padding:0 0 18px;font-size:14px}
+    .final-cta{padding:68px 28px;border-radius:30px;background:radial-gradient(ellipse at 75% 0%,rgba(255,214,0,.18),transparent 42%),#1d1e23;border:1px solid var(--line);text-align:center}.final-cta h2{font-size:clamp(26px,4vw,39px);line-height:1.45;font-weight:900}.final-cta p{color:#c2c3ca;margin:10px auto 23px;max-width:620px}
+    footer{padding:27px 0;border-top:1px solid var(--line);color:#a7a8af;font-size:13px}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.footer-inner a{text-decoration:none}.footer-inner a:hover{color:var(--yellow)}
+    .wa-float{position:fixed;z-index:9;bottom:20px;left:20px;width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:#20c76a;color:#fff;text-decoration:none;font-size:25px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .2s}.wa-float:hover{transform:scale(1.07)}
+    @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:35px}.course-card{max-width:520px;width:100%;margin-inline:auto}.nav-links{gap:14px}.grid-3{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.container{width:min(100% - 30px,520px)}.nav{height:66px}.nav-links{display:none}.nav>.button{padding:10px 14px;font-size:13px}.hero{padding:64px 0 55px}.hero-copy{font-size:15px}.section{padding:62px 0}.stats{grid-template-columns:repeat(2,1fr)}.grid-3,.modules,.steps{grid-template-columns:1fr}.course-card{padding:20px}.preview{height:155px}.final-cta{padding:48px 20px}.footer-inner{justify-content:center;text-align:center}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+  </style>
 </head>
 <body>
-    <div class="wrapper">
-        <header class="brand-header">
-            <div class="brand-logo">ZY <span>SERVICE</span></div>
-            <div class="brand-subtitle">دورات تدريبية احترافية في التصوير والمونتاج</div>
-        </header>
-
-        <section class="glass-card">
-            <div class="alert-banner">
-                <i class="fa-solid fa-circle-exclamation"></i>
-                <span>تم تجهيز المنصة لك لتبدأ مسارك المهني الآن</span>
-            </div>
-
-            <h1 class="main-title">
-                دورة <span>إحتراف المونتاج</span> وصناعة المحتوى
-            </h1>
-
-            <div class="price-section">
-                <div class="price-tag">249 ر.س</div>
-            </div>
-
-            <div class="sessions-grid">
-                <div class="session-box">
-                    <i class="fa-solid fa-video"></i>
-                    <h3>8 جلسات تعليمية</h3>
-                </div>
-                <div class="session-box">
-                    <i class="fa-solid fa-pen-nib"></i>
-                    <h3>محتوى عملي</h3>
-                </div>
-                <div class="session-box">
-                    <i class="fa-solid fa-laptop"></i>
-                    <h3>دعم مباشر</h3>
-                </div>
-                <div class="session-box">
-                    <i class="fa-solid fa-certificate"></i>
-                    <h3>شهادة إتمام</h3>
-                </div>
-            </div>
-
-            <ul class="feature-list">
-                <li><i class="fa-solid fa-check"></i><span>تعلم أساسيات المونتاج من الصفر حتى الاحتراف</span></li>
-                <li><i class="fa-solid fa-check"></i><span>اكتسب مهارات صناعة المحتوى والتسويق الرقمي</span></li>
-                <li><i class="fa-solid fa-check"></i><span>تطبيقات عملية على برامج التحرير الحديثة</span></li>
-                <li><i class="fa-solid fa-check"></i><span>تحضيرك لبدء عمل حر أو التوظيف في المجال</span></li>
-            </ul>
-        </section>
-
-        <section class="glass-card">
-            <h2 class="section-title">ما الذي ستتعلمه؟</h2>
-            <div class="learn-grid">
-                <div class="learn-item">أساسيات التصوير</div>
-                <div class="learn-item">تقنيات المونتاج</div>
-                <div class="learn-item">مبادئ التصميم البصري</div>
-                <div class="learn-item">إنتاج المحتوى</div>
-                <div class="learn-item">تعديل الصوت</div>
-                <div class="learn-item">التسويق الرقمي</div>
-            </div>
-        </section>
-
-        <section class="cta-box">
-            <p>ابدأ رحلتك الآن وحقق مهارات احترافية في مجال المونتاج</p>
-            <a href="#" class="cta-button">احجز الآن</a>
-        </section>
-    </div>
+  <header class="topbar"><nav class="nav container" aria-label="التنقل الرئيسي">
+    <a class="brand" href="#home" aria-label="ZY SERVICE - الرئيسية">ZY <span class="brand-mark">SERVICE</span></a>
+    <ul class="nav-links"><li><a href="#about">عن الدورة</a></li><li><a href="#curriculum">المحتوى</a></li><li><a href="#faq">الأسئلة الشائعة</a></li></ul>
+    <a class="button" href="#enroll">سجّل الآن <i class="fa-solid fa-arrow-left"></i></a>
+  </nav></header>
+  <main>
+    <section class="hero" id="home"><div class="container hero-grid"><div>
+      <div class="eyebrow"><i class="fa-solid fa-sparkles"></i> من الفكرة إلى فيديو متقن</div>
+      <h1>اصنع محتوى يلفت الانتباه مع <span>احتراف المونتاج</span></h1>
+      <p class="hero-copy">تعلم أساسيات التصوير والتحرير وصناعة المحتوى في دورة عملية مصممة لتساعدك على بناء مهاراتك خطوة بخطوة — حتى لو كانت هذه بدايتك.</p>
+      <div class="hero-actions"><a class="button" href="#enroll">احجز مقعدك الآن <i class="fa-solid fa-arrow-left"></i></a><a class="button button-outline" href="#curriculum">اكتشف محتوى الدورة</a></div>
+      <p class="hero-note"><i class="fa-solid fa-circle-check" style="color:var(--yellow)"></i> 8 جلسات تعليمية · تطبيق عملي · دعم مباشر · شهادة إتمام</p>
+      <div class="stats" aria-label="معلومات الدورة"><div class="stat"><strong>8 جلسات</strong><span>تعلم منظم</span></div><div class="stat"><strong>عملي</strong><span>تطبيق خطوة بخطوة</span></div><div class="stat"><strong>دعم مباشر</strong><span>للاستفسارات</span></div><div class="stat"><strong>شهادة</strong><span>عند إتمام الدورة</span></div></div>
+    </div><aside class="course-card" aria-label="ملخص الدورة والسعر"><div class="preview" aria-hidden="true"><div class="play"><i class="fa-solid fa-play"></i></div></div><div class="card-label">استثمر في مهارة تصنع بها فرصك</div><div class="price-line"><div class="price">249 <small>ر.س</small></div></div><a class="button" style="width:100%" href="#enroll">أريد الانضمام للدورة</a><hr class="card-divider"><div class="card-facts"><span><i class="fa-solid fa-video"></i> 8 جلسات</span><span><i class="fa-solid fa-laptop"></i> محتوى عملي</span><span><i class="fa-solid fa-headset"></i> دعم مباشر</span><span><i class="fa-solid fa-award"></i> شهادة إتمام</span></div></aside></div></section>
+    <section class="section section-light" id="about"><div class="container"><div class="section-head"><span class="kicker">لماذا هذه الدورة؟</span><h2>مهارات عملية تساعدك على البدء بثقة</h2><p>محتوى يجمع بين أساسيات الإنتاج وأدوات العمل الإبداعي، من التخطيط للفكرة وحتى تجهيز الفيديو للنشر.</p></div><div class="grid-3">
+      <article class="feature"><div class="feature-icon"><i class="fa-solid fa-graduation-cap"></i></div><h3>مناسبة للمبتدئين</h3><p>ابدأ من الأساسيات وتدرج في تعلم خطوات إعداد الفيديو وتحريره.</p></article>
+      <article class="feature"><div class="feature-icon"><i class="fa-solid fa-scissors"></i></div><h3>تطبيق عملي</h3><p>حوّل المفاهيم إلى ممارسة عبر تمارين ومشروعات تساعدك على تثبيت المهارة.</p></article>
+      <article class="feature"><div class="feature-icon"><i class="fa-solid fa-comments"></i></div><h3>دعم مباشر</h3><p>استفد من الدعم والإجابة عن استفساراتك خلال رحلة التعلم.</p></article>
+      <article class="feature"><div class="feature-icon"><i class="fa-solid fa-camera"></i></div><h3>تصوير وصوت</h3><p>تعرف على مبادئ التصوير وتعديل الصوت لتحسين جودة المحتوى.</p></article>
+      <article class="feature"><div class="feature-icon"><i class="fa-solid fa-bullhorn"></i></div><h3>صناعة محتوى</h3><p>تعرف على عناصر المحتوى والتسويق الرقمي وكيفية تقديم فكرتك.</p></article>
+      <article class="feature"><div class="feature-icon"><i class="fa-solid fa-certificate"></i></div><h3>شهادة إتمام</h3><p>احصل على شهادة إتمام بعد إنهاء متطلبات الدورة.</p></article>
+    </div></div></section>
+    <section class="section dark-section" id="curriculum"><div class="container"><div class="section-head"><span class="kicker">محتوى الدورة</span><h2>ماذا ستتعلم؟</h2><p>مسار مبسط يغطي المهارات الرئيسية لصناعة فيديو ومحتوى متكامل.</p></div><div class="modules">
+      <article class="module"><span class="module-number">01</span><div><h3>أساسيات التصوير</h3><p>مبادئ تكوين الصورة، الإضاءة، واختيار اللقطات المناسبة.</p></div></article>
+      <article class="module"><span class="module-number">02</span><div><h3>تقنيات المونتاج</h3><p>تنظيم اللقطات، القص، ترتيب المشاهد، وبناء تسلسل بصري واضح.</p></div></article>
+      <article class="module"><span class="module-number">03</span><div><h3>التصميم البصري</h3><p>استخدام النصوص والألوان والعناصر البصرية لدعم الرسالة.</p></div></article>
+      <article class="module"><span class="module-number">04</span><div><h3>إنتاج المحتوى</h3><p>تطوير الفكرة وتجهيزها لتناسب منصات المحتوى المختلفة.</p></div></article>
+      <article class="module"><span class="module-number">05</span><div><h3>تعديل الصوت</h3><p>تحسين الصوت واختيار المؤثرات المناسبة لإكمال تجربة المشاهدة.</p></div></article>
+      <article class="module"><span class="module-number">06</span><div><h3>التسويق الرقمي</h3><p>مقدمة في تقديم المحتوى والتعريف به عبر القنوات الرقمية.</p></div></article>
+    </div></div></section>
+    <section class="section section-light"><div class="container"><div class="section-head"><span class="kicker">خطواتك القادمة</span><h2>ابدأ رحلتك ببساطة</h2><p>ثلاث خطوات تفصلك عن البدء في تطوير مهاراتك الإبداعية.</p></div><div class="steps">
+      <article class="step"><span class="step-num">الخطوة 01</span><h3>تواصل وسجّل</h3><p>أرسل استفسارك عبر واتساب لمعرفة تفاصيل التسجيل وطريقة الانضمام.</p></article>
+      <article class="step"><span class="step-num">الخطوة 02</span><h3>ابدأ التعلم</h3><p>تابع الجلسات التعليمية وطبّق المهارات على تمارينك ومشروعاتك.</p></article>
+      <article class="step"><span class="step-num">الخطوة 03</span><h3>طوّر أعمالك</h3><p>استكمل الدورة واستفد من الدعم وشهادة الإتمام بعد إنهاء المتطلبات.</p></article>
+    </div></div></section>
+    <section class="section section-light" id="faq" style="padding-top:0"><div class="container"><div class="section-head"><span class="kicker">إجابات سريعة</span><h2>الأسئلة الشائعة</h2></div><div class="faq">
+      <details><summary>هل الدورة مناسبة للمبتدئين؟</summary><p>نعم، محتوى الدورة يبدأ بالأساسيات ويتدرج في موضوعات التصوير والمونتاج وصناعة المحتوى.</p></details>
+      <details><summary>كم عدد الجلسات وما سعر الدورة؟</summary><p>تتضمن الدورة 8 جلسات تعليمية، وسعرها 249 ريالًا سعوديًا.</p></details>
+      <details><summary>هل يوجد تطبيق عملي ودعم؟</summary><p>نعم، تتضمن الدورة محتوى عمليًا ودعمًا مباشرًا لمساعدتك خلال التعلم.</p></details>
+      <details><summary>هل أحصل على شهادة؟</summary><p>تتوفر شهادة إتمام بعد إنهاء متطلبات الدورة.</p></details>
+      <details><summary>كيف أسجل أو أعرف تفاصيل المواعيد؟</summary><p>اضغط على زر التسجيل للتواصل عبر واتساب والاستفسار عن التسجيل والمواعيد والتفاصيل.</p></details>
+    </div></div></section>
+    <section class="section" id="enroll" style="padding-top:10px"><div class="container final-cta"><span class="kicker">خطوتك الأولى تبدأ الآن</span><h2>هل أنت مستعد لصناعة محتوى أفضل؟</h2><p>انضم إلى دورة احتراف المونتاج وصناعة المحتوى من ZY SERVICE. السعر 249 ر.س وتشمل 8 جلسات تعليمية.</p><a class="button" href="https://wa.me/?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AF%D9%88%D8%B1%D8%A9%20%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%20%D8%A7%D9%84%D9%85%D9%88%D9%86%D8%AA%D8%A7%D8%AC%20%D9%85%D9%86%20ZY%20SERVICE" target="_blank" rel="noopener noreferrer">تواصل عبر واتساب <i class="fa-brands fa-whatsapp"></i></a><p style="font-size:12px;margin:13px 0 0">سيُفتح واتساب مع رسالة استفسار جاهزة؛ اختر جهة الاتصال لإرسالها.</p></div></section>
+  </main>
+  <footer><div class="container footer-inner"><a class="brand" href="#home">ZY <span class="brand-mark">SERVICE</span></a><span>© 2026 ZY SERVICE — جميع الحقوق محفوظة</span><a href="#home">العودة للأعلى ↑</a></div></footer>
+  <a class="wa-float" aria-label="تواصل عبر واتساب" href="https://wa.me/?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AF%D9%88%D8%B1%D8%A9%20%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%20%D8%A7%D9%84%D9%85%D9%88%D9%86%D8%AA%D8%A7%D8%AC%20%D9%85%D9%86%20ZY%20SERVICE" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
 </body>
 </html>
